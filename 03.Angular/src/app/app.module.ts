@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './modules/header/header.component';
 import { HeaderPromotionComponent } from './modules/header-promotion/header-promotion.component';
@@ -16,13 +17,10 @@ import { FooterComponent } from './modules/footer/footer.component';
     HeaderPromotionComponent,
     HeaderMobileComponent,
     NewsletterComponent,
-    FooterComponent
+    FooterComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

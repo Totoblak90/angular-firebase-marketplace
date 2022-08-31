@@ -5,6 +5,8 @@
 export const environment = {
   production: false,
   assetUrl: 'http://localhost:4200/assets/',
+  apiBaseUrl:
+    'https://marketplace-angular-firebase-default-rtdb.firebaseio.com/',
 };
 
 /*
