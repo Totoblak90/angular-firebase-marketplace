@@ -23,18 +23,18 @@ export interface Product {
   sub_category: string;
   tags: string[];
   title_list: string;
-  top_banner: ProductTopBanner;
+  top_banner: string;
   url: string;
   vertical_slider: string;
   video: string;
 }
 
-interface ProductFeedback {
+export interface ProductFeedback {
   type: string;
   comment: string;
 }
 
-interface ProductHorizontalSlider {
+export interface ProductHorizontalSlider {
   'H4 tag': string;
   'H3-1 tag': string;
   'H3-2 tag': string;
@@ -44,12 +44,12 @@ interface ProductHorizontalSlider {
   'IMG tag': string;
 }
 
-interface ProductReview {
+export interface ProductReview {
   review: number;
   comment: string;
 }
 
-interface ProductTopBanner {
+export interface ProductTopBanner {
   'H3 tag': string;
   'P1 tag': string;
   'H4 tag': string;

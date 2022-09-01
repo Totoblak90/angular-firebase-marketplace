@@ -1,18 +1,28 @@
 <div
+  *ngIf="topBanner; else preload"
   class="ps-block--promotion-header bg--cover"
-  style="background: url(assets/img/banner/top/header-promotion.jpg)"
+  style="background: url(assets/img/banner/top/{{ topBanner['IMG tag'] }})"
 >
-  <div class="container">
+  <div class="container" *ngIf="topBanner">
     <div class="ps-block__left">
-      <h3>20%</h3>
+      <h3>{{ topBanner["H3 tag"] }}</h3>
       <figure>
-        <p>Discount</p>
-        <h4>For Books Of March</h4>
+        <p>{{ topBanner["P1 tag"] }}</p>
+        <h4>{{ topBanner["H4 tag"] }}</h4>
       </figure>
     </div>
     <div class="ps-block__center">
-      <p>Enter Promotion<span>Sale2019</span></p>
+      <p>
+        {{ topBanner["P2 tag"] }}<span>{{ topBanner["Span tag"] }}</span>
+      </p>
     </div>
-    <a class="ps-btn ps-btn--sm" href="#">Shop now</a>
+    <a class="ps-btn ps-btn--sm" href="#">{{ topBanner["Button tag"] }}</a>
   </div>
 </div>
+
+<ng-template #preload>
+  <div
+    class="ps-block--promotion-header bg--cover"
+    style="background: url(assets/img/banner/top/header-promotion-1.jpg)"
+  ></div>
+</ng-template>
