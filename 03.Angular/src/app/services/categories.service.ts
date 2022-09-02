@@ -16,20 +16,19 @@ export class CategoriesService {
   constructor(private http: HttpClient) {}
 
   getAllCategories(): Observable<CategoryMapped[]> {
-    return this.http.get<CategoryMapped[]>(`${this._api}categories.json`).pipe(
-      map((categories) => {
-        return categories.map((c) => {
-          return {
+    return this.http
+      .get<CategoryResponse[]>(`${this._api}categories.json`)
+      .pipe(
+        map((categories) =>
+          categories.map<CategoryMapped>((c) => ({
             icon: c.icon,
             image: c.image,
             name: c.name,
             url: c.url,
             view: c.view,
-            //@ts-ignore
             title_list: JSON.parse(c.title_list),
-          };
-        });
-      })
-    );
+          }))
+        )
+      );
   }
 }

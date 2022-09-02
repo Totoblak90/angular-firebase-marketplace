@@ -112,13 +112,13 @@ Header Content
                   >
                     <h4>{{ titleList }}<span class="sub-toggle"></span></h4>
                     <ul class="mega-menu__list">
-                      <span *ngFor="let subCategory of subCategoriesFiltered">
+                      <div *ngFor="let subCategory of subCategoriesFiltered">
                         <li *ngIf="subCategory.title_list === titleList">
                           <a [routerLink]="'products/' + subCategory.url">{{
                             subCategory.name
                           }}</a>
                         </li>
-                      </span>
+                      </div>
                     </ul>
                   </div>
                 </div>

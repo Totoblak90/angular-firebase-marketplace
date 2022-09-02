@@ -16,11 +16,11 @@ export class FiltersService {
 
   filter(
     collection: string,
-    attribute: string,
-    paramName
+    orderBy: string,
+    equalTo: string
   ): Observable<SubCategoryList | ProductList | CategoryList> {
     return this.http.get<SubCategoryList | ProductList | CategoryList>(
-      `${this._api}${collection}?orderBy="${attribute}"&equalTo="${paramName}"&print=pretty`
+      `${this._api}${collection}?orderBy="${orderBy}"&equalTo="${equalTo}"&print=pretty`
     );
   }
 }
